@@ -5,9 +5,10 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 
 ## 2. Xác Định Các Parameter
 ### - Parameter trong GET ?x=... POST x=...
-### - Cookies và Sessions
+### - COOKIES và SESSIONS
 ### - Cả URI cũng có thể inject 
 ### - User-Agent *(ít trong CTF)*
+
 
 
 
