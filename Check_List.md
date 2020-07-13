@@ -4,10 +4,10 @@
 ### Các file chú ý: robots.txt, gitignore, .svn, .listin, .dstore, etc. Tool: FOCA.
 ### Còn có: /upload/ 
 
-####download website: 
+#### download website: 
 wget -rck
-wget -r -l1 -H -t1 -nd -N -nd -N -A.swf -erobots=off <WEBSITE> -i output_swf_files.txt
-####wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+wget -r -l1 -H -t1 -nd -N -nd -N -A.swf -erobots=off <WEBSITE> -i output_swf_files.txt 
+wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 
 ## 2. Xác Định Các Parameter
 ### - Parameter trong GET ?x=... POST 
