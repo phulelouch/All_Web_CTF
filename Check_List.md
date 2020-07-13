@@ -1,11 +1,11 @@
 # Steps of web exploitation:
 ## 1.Directory listing
 ### Luôn thực hiện fuzz thư mục trước, có thể dirb hoặc chỉ xài burp intruder
-### Các file chú ý: robots.txt, gitignore, .svn, .listin, .dstore, etc. Tool: FOCA.
-### Còn có: /upload/ 
+#### Các file chú ý: robots.txt, gitignore, .svn, .listin, .dstore, etc. Tool: FOCA.
+#### Còn có: /upload/ 
 
 wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
-#### download website: 
+### download website: 
 - wget -rck
 - wget -r -l1 -H -t1 -nd -N -nd -N -A.swf -erobots=off <WEBSITE> -i output_swf_files.txt 
 
