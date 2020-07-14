@@ -32,7 +32,7 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 - Thử 2 parameter cùng lúc sẽ ntn 
 - Các format string: **%s**  %c %d %e %f %I %o %p  %x %n 
 - Một integer rất lớn: integer overflow
-- Các PHP function: phpinfo, show_source, ... 
+- Các PHP function: phpinfo, show_source, serilization, unserilization ... 
 - Fuzz với các lỗi SQL, XSS, ... *(chắc phải tạo file khác list các lỗi)*
 - Fuzz với encode các kiểu như: md5, base64, oct, hex, URL, HTML 
   - VD: bài NumberMakeup: '||$['\147\154\157\142\141\154\105\166\141\154']('\141\154\145\162\164\50\61\51')||'
