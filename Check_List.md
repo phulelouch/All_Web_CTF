@@ -17,10 +17,10 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 
 
 ## 3. Xác Định Các Parameter cho server-side
-### - Parameter thường trong GET ?x=... POST 
-### - COOKIES và SESSIONS
-### - Cả URI cũng có thể inject 
-### - User-Agent *(ít trong CTF)*
+#### - Parameter thường trong GET ?x=... POST 
+#### - COOKIES và SESSIONS
+#### - Cả URI cũng có thể inject 
+#### - User-Agent *(ít trong CTF)*
 
 ## 4. Fuzz các parameters
 ### Với Parameter thường trong GET ?x=... POST 
@@ -28,5 +28,5 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
   /SecLists/Fuzzing/special-chars.txt
 - Fuzzing full trong Burp Intruder
 - A-Z a-z 0-9
-- Các format string: **%s***  %c %d %e %f %I %o %p  %x %n
+- Các format string: **%s**  %c %d %e %f %I %o %p  %x %n
 
