@@ -1,5 +1,7 @@
 # Steps of web exploitation:
 
+### *Chủ yếu checklist này sẽ nên xài cho các bài black_box*
+
 ## 1. F12 View Page Source
 - Theo luôn các link nó ghi
 - Vào network xem cả file javascript
