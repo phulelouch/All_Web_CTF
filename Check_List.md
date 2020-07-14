@@ -39,6 +39,7 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 ### Với COOKIES và SESSIONS:
 - Decode các kiểu md5, base64, oct, hex, URL, HTML 
 - Thử cookie, session flask exploit các kiểu
+- Cookie Forcing/Injection
 
 
 
