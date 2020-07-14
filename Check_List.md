@@ -3,6 +3,7 @@
 ## 1. F12 View Page Source
 - Theo luôn các link nó ghi
 - Vào network xem cả file javascript
+- is_debug=1, source=1
 
 
 ## 2.Directory listing
