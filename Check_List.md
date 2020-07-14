@@ -28,5 +28,5 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
   /SecLists/Fuzzing/special-chars.txt
 - Fuzzing full trong Burp Intruder
 - A-Z a-z 0-9
-- Các format string: **%s**  %c %d %e %f %I %o %p  %x %n
+- Các format string: **#####%s**  %c %d %e %f %I %o %p  %x %n
 
