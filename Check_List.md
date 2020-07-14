@@ -16,7 +16,7 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 - wget -r -l1 -H -t1 -nd -N -nd -N -A.swf -erobots=off <WEBSITE> -i output_swf_files.txt 
 
 
-## 3. Xác Định Các Parameter
+## 3. Xác Định Các Parameter cho server-side
 ### - Parameter thường trong GET ?x=... POST 
 ### - COOKIES và SESSIONS
 ### - Cả URI cũng có thể inject 
@@ -28,5 +28,5 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
   /SecLists/Fuzzing/special-chars.txt
 - Fuzzing full trong Burp Intruder
 - A-Z a-z 0-9
-- 
+- Các format string %c %d %e %f %I %o %p **%s** %x %n
 
