@@ -19,3 +19,4 @@ calling __destruct
 (+) serialized: O:4:"awae":0:{}
 calling __destruct
 ```
+Ở đây chúng ta thấy rằng có 2 lần \_\_contruct được gọi
