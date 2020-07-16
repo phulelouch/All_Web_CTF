@@ -1,4 +1,4 @@
-#### Đây là 1 vấn đề khá thú vị. Nói đơn giản về PHP Object thì: 1 Object có thể là bất cứ thứ gì mà developer chọn.
+#### Đây là 1 vấn đề khá thú vị. Nói đơn giản về PHP Object thì: 1 Object có thể là bất cứ thứ gì mà developer chọn. Trước hết có 2 ví dụ dưới đây:
 ```
 <?php
 class awae {
