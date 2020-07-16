@@ -2,7 +2,7 @@
 ```
 <?php
 class awae {
-	public function __construct() {echo "calling __contruct\n";}
+	public function __construct() {echo "calling __construct\n";}
 	public function __destruct() {echo "calling __destruct\n";}
 }
 
@@ -14,9 +14,10 @@ unserialize($ser);//trigger the __detruct
 ```
 #### Kết quả sẽ như thế này :
 ```
-calling __contruct
+calling __construct
 calling __destruct
 (+) serialized: O:4:"awae":0:{}
 calling __destruct
 ```
-Ở đây chúng ta thấy rằng có 2 lần \_\_contruct được gọi
+\_\_construct được 
+Ở đây chúng ta thấy rằng có 2 lần \_\_destruct được gọi.
