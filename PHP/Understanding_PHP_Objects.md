@@ -48,7 +48,7 @@ calling __destruct
 ```
 
 \_\_destruct lại được gọi 2 lần nhưng lần này có sự khác biệt
-- Thực ra \_\_construct luôn được gọi đầu tiên khi ta tạo new object 
+- Thực ra \_\_construct luôn được gọi đầu tiên khi ta tạo new object tức khi bắt đầu tham chiếu
 - Và 1 hàm \_\_destruct luôn sẽ được gọi khi object tự hủy. Với VD1: `new aw()` tức là nó sẽ tự tham chiếu và hủy tham chiếu vào 1 biến $temp. Còn với VD2 object được đặt trong 1 biến $try, tức là còn tham chiếu nên nó chỉ tự hủy sau khi unserialize ra $try và hủy tham chiếu (việc hủy tham chiếu có thể là do việc hủy trương trình)
 - Một \_\_destruct còn lại chính là do unserialize  
 
