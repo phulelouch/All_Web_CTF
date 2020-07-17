@@ -54,6 +54,7 @@ calling __destruct
 
 #### Khó hiểu vãi lìn phải không nào, nhưng thôi ráng đê :v
 
+#### Ngoài construct và destruct còn có những "magic methods" khác, hãy xem list dưới đây nhé:
 
 
 
