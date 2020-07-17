@@ -58,5 +58,6 @@ calling __destruct
 
 <img src="https://github.com/phulelouch/All_Web_CTF/blob/master/PHP/Pics/php_magic_method.png">
 
-#### À thiều \_unset($key) nha:
+#### À thiếu \_unset($key) nha:
 This is triggered when code calls unset() on the object where the variable is inaccessible.
+Chắc tao phải để link VD từng cái quá
