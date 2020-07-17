@@ -56,5 +56,6 @@ calling __destruct
 
 #### Ngoài construct và destruct còn có những "magic methods" khác, hãy xem list dưới đây nhé:
 
+<img src="https://github.com/phulelouch/All_Web_CTF/blob/master/PHP/Pics/php_magic_method.png">
 
 
