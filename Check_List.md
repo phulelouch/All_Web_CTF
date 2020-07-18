@@ -34,6 +34,7 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 - Thử 2 parameter cùng lúc sẽ ntn 
 - Các format string: **%s**  %c %d %e %f %I %o %p  %x %n 
 - Một integer rất lớn: integer overflow
+- Fuzz với dấu cách (whitespace)
 - Các PHP function: phpinfo, show_source, serilization, unserilization ... 
 - Fuzz với các lỗi SQL, XSS, ... *(chắc phải tạo file khác list các lỗi)*
 - Fuzz với encode các kiểu như: md5, base64, oct, hex, URL, HTML 
