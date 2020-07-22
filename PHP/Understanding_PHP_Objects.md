@@ -1,3 +1,4 @@
+### 1. Object and Magic method
 #### Đây là 1 vấn đề khá thú vị. Nói đơn giản về PHP Object thì: 1 Object có thể là bất cứ thứ gì mà developer chọn. Trước hết có 2 ví dụ dưới đây:
 
 #### VD1:
@@ -61,3 +62,7 @@ calling __destruct
 #### À thiếu \_unset($key) nha:
 This is triggered when code calls unset() on the object where the variable is inaccessible.
 Chắc tao phải để link VD từng cái quá
+
+### 2. PHP Overloading
+
+
