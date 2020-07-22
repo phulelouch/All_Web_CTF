@@ -44,6 +44,12 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 - Decode các kiểu md5, base64, oct, hex, URL, HTML 
 - Thử cookie, session flask exploit các kiểu
 - Cookie Forcing/Injection
+- Jwt exploit:
+  + brute for secret key
+  + change alg to None or HS256
+  + fake rsa key for RS256 alg
+  + if we can control some parameter in jwt, we alse use json injection for bypass some thing
+ 
 
 
 
