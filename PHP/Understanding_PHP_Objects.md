@@ -66,4 +66,12 @@ Chắc tao phải để link VD từng cái quá
 
 ### 2. PHP Overloading
 
+Overloading trong PHP mang nghĩa tạo các thuộc tính và phương thức động. Những thành phần động này được xử lý thông qua các magic method được thiết lập trong một lớp với các kiểu hành động khác nhau....
+
+Có 2 function mà ta chú ý:
+- call_user_func_array ($callback, $array) : call a callback with an array of parameters
+- call_user func($callback,[, $param [, $param]]) : call a callback with any number of arguments
+
+### 3. Private Properties and Methods
+
 
