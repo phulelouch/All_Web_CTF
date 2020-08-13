@@ -96,7 +96,7 @@ Stack trace:
   thrown in php shell code on line 1
 ```
 
-The way around this is to put that private method into constructor or change the private into public. 
+The way around this is to put that private method into public constructor or change the private into public. 
 Or we can modify the serialize string in order to suite our need. Let choose the hard way.
 
 ### 4. Modify
