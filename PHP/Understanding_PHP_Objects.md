@@ -54,6 +54,8 @@ calling __destruct
 - Một \_\_destruct còn lại chính là do unserialize  
 **Tất nhiên khi để 1 biến trước unserialize như $a=unserialize($sera); và chương trình không kết thúc do 1 lỗi gì đó kết quả sẽ là $a= new aws(); và __destruct vẫn sẽ không được gọi **
 
+#### Ý quan trọng: có thể dùng stdClass unserialize no class name
+
 #### Khó hiểu vãi lìn phải không nào, nhưng thôi ráng đê :v
 
 #### Ngoài construct và destruct còn có những "magic methods" khác, hãy xem list dưới đây nhé:
@@ -73,5 +75,18 @@ Có 2 function mà ta chú ý:
 - call_user func($callback,[, $param [, $param]]) : call a callback with any number of arguments
 
 ### 3. Private Properties and Methods
+```
+<?php
+class awae{
+	private $student = "mr_me";
+	public $teacher = "muts";
+}
+$awae_instance = new awae;
+print $awae_instance-> teacher;
+print $awae_instance-> student;
+?>
+
+```
+
 
 
