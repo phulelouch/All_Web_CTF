@@ -1,7 +1,12 @@
-### 1. Object and Magic method
-#### Đây là 1 vấn đề khá thú vị. Nói đơn giản về PHP Object thì: 1 Object có thể là bất cứ thứ gì mà developer chọn. Trước hết có 2 ví dụ dưới đây:
+#### This paper is writting with the intention of understanding PHP Object under Offensive Security aspect (or Hacker, Red Team aspect), in order to gain insight into a security problem that have been exist since the first day of Java, PHP and other programming languages that support OOP.
 
-#### VD1:
+#### Although this paper only covering PHP language, the problems happend in others. First we will discuss what we know. Second study a real vulnerability in Magento case.
+
+
+### 1. Object and Magic method
+#### This is an interesting topic. In a simple way PHP do support Object-Oriented Programming in a strange way, with serialize and unserialize, developer can chooses anything to be objects in PHP'VM memory. Let's look at a simple example. 
+
+#### EX1:
 ```
 <?php
 class aw {
@@ -15,7 +20,7 @@ unserialize($ser);//trigger the __detruct
 ?>
 
 ```
-#### Kết quả sẽ như thế này :
+#### The result :
 ```
 calling __construct
 calling __destruct
@@ -24,9 +29,9 @@ calling __destruct
 
 ```
 
-Ở đây chúng ta thấy rằng có 2 lần \_\_destruct được gọi.
+Here we can see that there was 2 times \_\_destruct was call
 
-#### VD2:
+#### EX2:
 ```
 <?php
 class aws {
@@ -40,50 +45,48 @@ print"(+) serialized: ".$sera."\n";
 unserialize($sera);//trigger the __detruct
 ?>
 ```
-#### Kết quả:
+#### And the result:
 ```
 calling __construct
 (+) serialized: O:3:"aws":0:{}
 calling __destruct
 calling __destruct
 ```
+Class get constructed and destructed at run time for memory management
+purposes within the PHP virtual machine. Note that the \_destruct gets called twice, once on unserialize() and then again on script completion. So they are different.
 
-\_\_destruct lại được gọi 2 lần nhưng lần này có sự khác biệt
-- Thực ra \_\_construct luôn được gọi đầu tiên khi ta tạo new object tức khi bắt đầu tham chiếu
-- Và 1 hàm \_\_destruct luôn sẽ được gọi khi object tự hủy. Với VD1: `new aw()` tức là nó sẽ tự tham chiếu và hủy tham chiếu vào 1 biến $temp. Còn với VD2 object được đặt trong 1 biến $try, tức là còn tham chiếu nên nó chỉ tự hủy sau khi unserialize ra $try và hủy tham chiếu (việc hủy tham chiếu có thể là do việc hủy trương trình)
-- Một \_\_destruct còn lại chính là do unserialize  
-**Tất nhiên khi để 1 biến trước unserialize như $a=unserialize($sera); và chương trình không kết thúc do 1 lỗi gì đó kết quả sẽ là $a= new aws(); và __destruct vẫn sẽ không được gọi **
+- serialize($mixed)
+Generates a storable representation of a value (of any type). This is useful for storing or passing PHP values around without losing their type and structure.
+- unserialize($string)
+Takes a single serialized string variable and converts it back into a PHP value.
 
-#### Ý quan trọng: có thể dùng stdClass unserialize no class name
+#### We can use stdClass unserialize no class name
 
-#### Khó hiểu vãi lìn phải không nào, nhưng thôi ráng đê :v
-
-#### Ngoài construct và destruct còn có những "magic methods" khác, hãy xem list dưới đây nhé:
+#### In PHP (and other languages as well) there are a number of "magic methods" when implemented within an object, are triggered on certain conditions. Two very important ones in PHP are \_construct and \_destruct. However, there are many others. Let's break down a list:
 
 <img src="https://github.com/phulelouch/All_Web_CTF/blob/master/PHP/Pics/php_magic_method.png">
 
-#### À thiếu \_unset($key) nha:
-This is triggered when code calls unset() on the object where the variable is inaccessible.
-Chắc tao phải để link VD từng cái quá
 
 ### 2. PHP Overloading
 
-Overloading trong PHP mang nghĩa tạo các thuộc tính và phương thức động. Những thành phần động này được xử lý thông qua các magic method được thiết lập trong một lớp với các kiểu hành động khác nhau....
+Overloading, specifically in PHP, refers to the dynamic creation of properties and methods processed via magic methods.
 
-Có 2 function mà ta chú ý:
+There are several methods used by magic methods to perform this "dynamic" creation. Two importants ones are:
 - call_user_func_array ($callback, $array) : call a callback with an array of parameters
 - call_user func($callback,[, $param [, $param]]) : call a callback with any number of arguments
+
+Why did these 2 matter, these are often included in the '\_call' magic method and if abused correctly, can allow the redirection of code flow.
 
 ### 3. Private Properties and Methods
 ```
 <?php
-class awae{
+class a{
 	private $student = "mr_me";
 	public $teacher = "muts";
 }
-$awae_instance = new awae;
-print $awae_instance-> teacher;
-print $awae_instance-> student;
+$a_instance = new a;
+print $a_instance-> teacher;
+print $a_instance-> student;
 ?>
 
 ```
@@ -98,6 +101,49 @@ Stack trace:
 
 The way around this is to put that private method into public constructor or change the private into public. 
 Or we can modify the serialize string in order to suite our need. Let choose the hard way.
+```
+<?php
+class aw {
+	private $student = "mr me\n";
+	public $teacher  = "muts\n";
+	public function __construct($student) {
+		$this->student = $student;
+		echo $this->student."\n";
+	}
+}
+$aw = new aw("OSID24561");
+print$aw->teacher;
+?>
 
-### 4. Modify
+```
+
+```
+OSID24561
+muts
+```
+
+
+### 4 The Devil of Details
+
+We know that unserialize function take a string parameter, which is the output of serialize, right? So what does this string look like:
+
+With an object like this:
+```
+<?php
+class Hi {
+	public $public       = 1;
+	protected $protected = 2;
+	private $private     = 3;
+}
+$hi = new Hi();
+print(base64_decode(base64_encode(serialize($hi))));
+?>
+```
+Create:
+O:2:"Hi":3:{s:6:"public";i:1;s:12:"\*protected";i:2;s:11:"Hiprivate";i:3;}
+
+However, this is actually wrong, and will NOT serialize back into PHP's memory. When unserialize we got an error:
+```
+Notice:  unserialize(): Error at offset 47 of 73 bytes in /home/phulelouch/Desktop/All_Web_CTF/untitled.php on line ```
+
 
