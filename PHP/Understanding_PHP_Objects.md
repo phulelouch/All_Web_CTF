@@ -144,6 +144,7 @@ O:2:"Hi":3:{s:6:"public";i:1;s:12:"\*protected";i:2;s:11:"Hiprivate";i:3;}
 
 However, this is actually wrong, and will NOT serialize back into PHP's memory. When unserialize we got an error:
 ```
-Notice:  unserialize(): Error at offset 47 of 73 bytes in /home/phulelouch/Desktop/All_Web_CTF/untitled.php on line ```
+Notice:  unserialize(): Error at offset 47 of 73 bytes in /home/phulelouch/Desktop/All_Web_CTF/untitled.php on line 
+```
 
 
