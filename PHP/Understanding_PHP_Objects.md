@@ -146,5 +146,19 @@ However, this is actually wrong, and will NOT serialize back into PHP's memory. 
 ```
 Notice:  unserialize(): Error at offset 47 of 73 bytes in /home/phulelouch/Desktop/All_Web_CTF/untitled.php on line 
 ```
+We can fix this by:
+- Make all the Properties Public
+```
+0:2:"Hi":3:{s:6:"public ";i:1;s:9:"protected";i:2 ;s:7:"private";i:3;}
+```
+- Removing the '\*' and 'Hi' and updating the string lengths
+- Set tile Correct Type
+```
+0:2:"Hi":3:{s:6: "public";i:1;s:12 :"\00*\00protected ";i:2;s:ll:"\00Hi\00 private";i:3;}
+```
+Typically speaking, option one is used since, as attackers, we cannot use private or protected properties for object injection anyway (since we can't set them).
+
+### 5. Magento Unserialize
+Finally! Now we will walk through the discovery process, from reading the code to developing our own pop chain.
 
 
