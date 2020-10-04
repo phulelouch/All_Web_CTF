@@ -42,7 +42,7 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 
 ### Với COOKIES và SESSIONS:
 - Decode các kiểu md5, base64, oct, hex, URL, HTML 
-- Thử cookie, session flask exploit các kiểu
+- Thử cookie, session flask exploit các kiểu https://gchq.github.io/CyberChef/
 - Cookie Forcing/Injection
 - Jwt exploit:
   + brute for secret key
@@ -56,7 +56,7 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/
 https://github.com/JohnHammond/ctf-katana
 https://github.com/w181496/Web-CTF-Cheatsheet#php-%E5%85%B6%E4%BB%96%E7%89%B9%E6%80%A7
-https://gchq.github.io/CyberChef/
+
 
 
 
