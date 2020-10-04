@@ -1,6 +1,6 @@
 # Steps of web exploitation:
 
-### *Chủ yếu checklist này sẽ xài cho các bài black_box, tất nhiên vẫn nên sử dụng cho các bài white_box để xác định hướng exploit*
+### *Chủ yếu checklist này sẽ xài cho các bài black_box, tất nhiên vẫn nên sử dụng cho các bài white_box để xác định hướng exploit. Và sáng tạo lên, đừng bám theo cái này :v *
 
 ## 1. F12 View Page Source
 - Theo luôn các link nó ghi
