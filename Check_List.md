@@ -23,7 +23,7 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 #### - Parameter thường trong GET ?x=... POST 
 #### - COOKIES và SESSIONS
 #### - Cả URI cũng có thể inject 
-#### - User-Agent *(ít trong CTF)*
+#### - User-Agent 
 
 ## 4. Fuzz các parameters
 ### Với Parameter thường trong GET ?x=... POST 
