@@ -49,7 +49,9 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
   + change alg to None or HS256
   + fake rsa key for RS256 alg
   + if we can control some parameter in jwt, we alse use json injection for bypass some thing
- 
+### Với URI:
+- Thêm bớt trong uri
+- Bỏ hết parameter
 
 
 ## 5. Payload all the things
