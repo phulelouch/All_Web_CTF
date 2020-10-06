@@ -52,7 +52,10 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 ### Với URI:
 - Thêm bớt trong uri
 - Bỏ hết parameter
+- %00 
+- XSS, fuzz đuôi
 
+### User-Agent
 
 ## 5. Payload all the things
 https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/
