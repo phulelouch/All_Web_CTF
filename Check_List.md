@@ -60,6 +60,10 @@ preg_replace với cờ i thì có thể chèn:vd black list có select->bypass 
 
 file_put_content nếu control filename đc thì giống lfi
 file_get_content ngoài việc lấy file từ local nó có thể lấy file từ internet
+
+?file=php://filter/convert.base64-encode/resource=/nice/../../proc/self/cwd/flag.php
+/proc/self/cwd trỏ về dir hiện tại
+
 =======================================================================================================================================================
 
 ### Với COOKIES và SESSIONS:
