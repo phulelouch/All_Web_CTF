@@ -41,6 +41,26 @@ wordlists: /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
 - %E2%80%8B zero-width payload
 - Fuzz với encode các kiểu như: md5, base64, oct, hex, URL, HTML 
   - VD: bài NumberMakeup: '||$['\147\154\157\142\141\154\105\166\141\154']('\141\154\145\162\164\50\61\51')||'
+  
+=======================================================================================================================================================
+register globals: ?\_SESSION[logged]=1
+wfuzz --hw -w <word lít> url
+php:+replaces . with _
++ sử dụng {} thay thế [] trong lập chỉ mục
+
+dùng SECRET_KEY để ký cookie admin
++flask-unsign --secret "secret_key" --sign --cookie "admin"
+
++sha1 so sánh bỏ qua bằng [].will return null
++bypass regex bằng %00
+
+strcmp bypass with []
+
+preg_replace với cờ i thì có thể chèn:vd black list có select->bypass sselectelect->select
+
+file_put_content nếu control filename đc thì giống lfi
+file_get_content ngoài việc lấy file từ local nó có thể lấy file từ internet
+=======================================================================================================================================================
 
 ### Với COOKIES và SESSIONS:
 - Decode các kiểu md5, base64, oct, hex, URL, HTML 
